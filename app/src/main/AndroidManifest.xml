@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="za.co.varsitycollege.st10158643.basicweatherapp">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -15,15 +15,30 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BasicWeatherApp"
         tools:targetApi="31">
+
+        <!-- MainActivity2 as the launcher activity -->
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".MainActivity2"
+            android:exported="true"
+            android:label="@string/title_activity_main2"
+            android:theme="@style/Theme.BasicWeatherApp.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    </application>
 
+        <!-- MainActivity without launcher intent filter -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="false">
+            <!-- was like this tho : android:exported="false"-->
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+        </activity>
+    </application>
 </manifest>
