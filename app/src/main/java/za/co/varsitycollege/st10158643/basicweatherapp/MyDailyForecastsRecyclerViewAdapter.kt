@@ -6,16 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 
-import za.co.varsitycollege.st10158643.basicweatherapp.placeholder.PlaceholderContent.PlaceholderItem
-import za.co.varsitycollege.st10158643.basicweatherapp.databinding.FragmentItemBinding
-
 /**
  * [RecyclerView.Adapter] that can display a [PlaceholderItem].
  * TODO: Replace the implementation with code for your data type.
  */
+
 class MyDailyForecastsRecyclerViewAdapter(
-        private val values: List<PlaceholderItem>)
-    //Extents the recycle view adapter, pass in the view holder and the data type
+    //PASS: List of DailyForecasts
+    private val values: List<DailyForecasts>)
+    //RETURN: RecyclerView.Adapter<MyDailyForecastsRecyclerViewAdapter.ViewHolder>
     : RecyclerView.Adapter<MyDailyForecastsRecyclerViewAdapter.ViewHolder>() {
 
 
@@ -40,13 +39,11 @@ class MyDailyForecastsRecyclerViewAdapter(
         //getting the item at the position
         val item = values[position]
         //setting the Adaptor data item to the view holder items
-        /*
+
         holder.adapDate.text = item.Date?.substring(0,10)
         holder.adapMax.text = item.Temperature?.Minimum?.Value.toString()
-        holder.adapMin.text = item.Temperature?.Maximum?.Value.toString()*/
-        holder.adapDate.text = item.toString()
-        holder.adapMax.text = item.toString()
-        holder.adapMin.text = item.toString()
+        holder.adapMin.text = item.Temperature?.Maximum?.Value.toString()
+
     }
 
     override fun getItemCount(): Int = values.size
